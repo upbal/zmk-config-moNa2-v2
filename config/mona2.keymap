@@ -83,6 +83,20 @@
 
             tap-ms = <20>;
         };
+
+        tog_on: tog_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "Toggle Layer On";
+            #binding-cells = <1>;
+            toggle-mode = "on";
+        };
+
+        tog_off: tog_off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "Toggle Layer Off";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
     };
 
     keymap {
