@@ -42,6 +42,20 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        ASYNET_PW: ASYNET_PW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N5 &kp R &kp Y &kp N6 &kp C &kp H &kp U &kp LS(U) &kp RET>;
+            label = "ASYNET_PW";
+        };
+
+        Mac_PW: Mac_PW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp K &kp Y &kp O &kp N &kp K &kp N0 &kp N1 &kp O &kp LS(V) &kp E &kp RET>;
+            label = "MAC_PW";
+        };
     };
 
     behaviors {
@@ -120,7 +134,7 @@
 
         layer_3_function_win {
             bindings = <
-&none  &none          &none  &none          &none                            &none      &none      &none      &none          &none
+&none  &none          &none  &none          &none                            &none      &none      &Mac_PW    &none          &ASYNET_PW
 &none  &none          &none  &kp LA(LEFT)   &kp LA(RIGHT)            &trans  &kp LC(A)  &kp LC(C)  &kp LC(V)  &kp LC(LS(V))  &none
 &none  &kp LS(LG(S))  &none  &kp LC(LS(T))  &kp LC(W)      &trans    &trans  &kp LC(Z)  &kp LC(Y)  &none      &none          &none
 &none  &none          &none  &trans         &trans         &trans    &trans  &trans                                          &none
