@@ -42,6 +42,45 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        ASYNET_PW: ASYNET_PW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N5 &kp R &kp Y &kp N6 &kp C &kp H &kp U &kp LS(U) &kp RET>;
+            label = "ASYNET_PW";
+        };
+
+        Mac_PW: Mac_PW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp K &kp Y &kp O &kp N &kp K &kp N0 &kp N1 &kp O &kp LS(V) &kp E &kp RET>;
+            label = "MAC_PW";
+        };
+
+        bt0: bt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 0>,
+                <&macro_wait_time 500>;
+
+            label = "BT0";
+        };
+
+        bt1: bt1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&tog_off 1>,
+                <&macro_wait_time 200>,
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 500>,
+                <&tog_on 1>;
+
+            label = "BT1";
+        };
     };
 
     behaviors {
@@ -69,6 +108,20 @@
 
             tap-ms = <20>;
         };
+
+        tog_on: tog_on {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "Toggle Layer On";
+            #binding-cells = <1>;
+            toggle-mode = "on";
+        };
+
+        tog_off: tog_off {
+            compatible = "zmk,behavior-toggle-layer";
+            label = "Toggle Layer Off";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
     };
 
     keymap {
@@ -90,7 +143,7 @@
 &kp Q             &kp W      &kp E         &kp R                      &kp T                                                      &kp Y        &kp U  &kp I        &kp O     &kp P
 &kp A             &kp S      &kp D         &kp F                      &kp G                                       &none          &kp H        &kp J  &kp K        &kp L     &kp MINUS
 &kp Z             &kp X      &kp C         &kp V                      &kp B        &none                          &none          &kp N        &kp M  &kp AT_SIGN  &mkp MB1  &mkp MB2
-&kp LEFT_COMMAND  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 4 LANGUAGE_1    &kp BACKSPACE  &lt 3 ENTER                                &kp DELETE
+&kp LEFT_COMMAND  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 5 LANGUAGE_1    &kp BACKSPACE  &lt 3 ENTER                                &kp DELETE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -120,7 +173,7 @@
 
         layer_3_function_win {
             bindings = <
-&none  &none          &none  &none          &none                            &none      &none      &none      &none          &none
+&none  &none          &none  &none          &none                            &none      &none      &Mac_PW    &none          &ASYNET_PW
 &none  &none          &none  &kp LA(LEFT)   &kp LA(RIGHT)            &trans  &kp LC(A)  &kp LC(C)  &kp LC(V)  &kp LC(LS(V))  &none
 &none  &kp LS(LG(S))  &none  &kp LC(LS(T))  &kp LC(W)      &trans    &trans  &kp LC(Z)  &kp LC(Y)  &none      &none          &none
 &none  &none          &none  &trans         &trans         &trans    &trans  &trans                                          &none
@@ -142,10 +195,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans            &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                         &bt0    &bt1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans            &trans       &trans  &trans  &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans  &trans  &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                      &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&scroll_up_down>;
