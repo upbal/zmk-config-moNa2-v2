@@ -109,17 +109,17 @@
             tap-ms = <20>;
         };
 
-        tog_on: tog_on {
+        tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
-            label = "Toggle Layer On";
             #binding-cells = <1>;
+            display-name = "Toggle Layer On";
             toggle-mode = "on";
         };
 
-        tog_off: tog_off {
+        tog_off: toggle_layer_off_only {
             compatible = "zmk,behavior-toggle-layer";
-            label = "Toggle Layer Off";
             #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
             toggle-mode = "off";
         };
     };
