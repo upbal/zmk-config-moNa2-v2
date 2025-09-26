@@ -81,6 +81,13 @@
 
             label = "BT1";
         };
+
+        MagicConnect_PW: MagicConnect_PW {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N8 &kp N3 &kp T &kp LS(T) &kp C &kp F &kp LS(Q) &kp LS(X) &kp LS(M) &kp LS(R) &kp RET>;
+            label = "MAGICCONNECT_PW";
+        };
     };
 
     behaviors {
@@ -129,9 +136,9 @@
 
         win_default_layer {
             bindings = <
-&kp Q      &kp W         &kp E         &kp R                           &kp T                                                    &kp Y        &kp U  &kp I        &kp O     &kp P
-&kp A      &kp S         &kp D         &kp F                           &kp G                                     &none          &kp H        &kp J  &kp K        &kp L     &kp MINUS
-&kp Z      &kp X         &kp C         &kp V                           &kp B        &none                        &none          &kp N        &kp M  &kp AT_SIGN  &mkp MB1  &mkp MB2
+&kp Q      &kp W         &kp E         &kp R                      &kp T                                                      &kp Y        &kp U  &kp I        &kp O     &kp P
+&kp A      &kp S         &kp D         &kp F                      &kp G                                       &none          &kp H        &kp J  &kp K        &kp L     &kp MINUS
+&kp Z      &kp X         &kp C         &kp V                      &kp B        &none                          &none          &kp N        &kp M  &kp AT_SIGN  &mkp MB1  &mkp MB2
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 4 LANGUAGE_1    &kp BACKSPACE  &lt 3 ENTER                                &lt 8 DELETE
             >;
 
@@ -173,10 +180,10 @@
 
         layer_3_function_win {
             bindings = <
-&none  &none          &none  &none          &none                            &none      &none      &Mac_PW    &none          &ASYNET_PW
-&none  &none          &none  &kp LA(LEFT)   &kp LA(RIGHT)            &trans  &kp LC(A)  &kp LC(C)  &kp LC(V)  &kp LC(LS(V))  &none
-&none  &kp LS(LG(S))  &none  &kp LC(LS(T))  &kp LC(W)      &trans    &trans  &kp LC(Z)  &kp LC(Y)  &none      &none          &none
-&none  &none          &none  &trans         &trans         &trans    &trans  &trans                                          &none
+&none  &none          &none  &none          &none                            &MagicConnect_PW  &none      &Mac_PW    &none          &ASYNET_PW
+&none  &none          &none  &kp LA(LEFT)   &kp LA(RIGHT)            &trans  &kp LC(A)         &kp LC(C)  &kp LC(V)  &kp LC(LS(V))  &none
+&none  &kp LS(LG(S))  &none  &kp LC(LS(T))  &kp LC(W)      &trans    &trans  &kp LC(Z)         &kp LC(Y)  &none      &none          &none
+&none  &none          &none  &trans         &trans         &trans    &trans  &trans                                                 &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -184,10 +191,10 @@
 
         layer_3_function_mac {
             bindings = <
-&kp LC(LG(Q))  &none          &none  &kp LA(SPACE)         &kp LC(UP_ARROW)                         &none      &none      &none      &none          &none
-&none          &none          &none  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)            &trans  &kp LG(A)  &kp LG(C)  &kp LG(V)  &kp LS(LG(V))  &none
-&none          &kp LS(LG(S))  &none  &kp LG(LS(T))         &kp LG(W)              &trans    &trans  &kp LG(Z)  &kp LG(Y)  &none      &none          &none
-&none          &none          &none  &trans                &trans                 &trans    &trans  &trans                                          &none
+&kp LC(LG(Q))  &none          &none  &kp LA(SPACE)         &kp LC(UP_ARROW)                         &MagicConnect_PW  &none      &Mac_PW    &none          &ASYNET_PW
+&none          &none          &none  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)            &trans  &kp LG(A)         &kp LG(C)  &kp LG(V)  &kp LS(LG(V))  &none
+&none          &kp LS(LG(S))  &none  &kp LG(LS(T))         &kp LG(W)              &trans    &trans  &kp LG(Z)         &kp LG(Y)  &none      &none          &none
+&none          &none          &none  &trans                &trans                 &trans    &trans  &trans                                                 &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
