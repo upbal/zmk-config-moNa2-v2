@@ -144,10 +144,10 @@
 
         layer_3_function_win {
             bindings = <
-&kp LG(L)              &kp LA(TAB)        &kp LA(LS(TAB))  &none          &none                            &MagicConnect_PW  &none      &OnePassWD_PW  &none          &ASYNET_PW
-&kp LC(LS(SEMICOLON))  &kp LC(SEMICOLON)  &kp LC(D)        &kp LA(LEFT)   &kp LA(RIGHT)            &trans  &kp LC(A)         &kp LC(C)  &kp LC(V)      &kp LC(LS(V))  &none
-&none                  &kp LS(LG(S))      &none            &kp LC(LS(T))  &kp LC(W)      &trans    &trans  &kp LC(Z)         &kp LC(Y)  &none          &none          &none
-&none                  &none              &none            &trans         &trans         &trans    &trans  &trans                                                     &none
+&kp LG(L)              &kp TAB            &kp LEFT_SHIFT  &none          &kp LEFT_ALT                     &MagicConnect_PW  &none      &OnePassWD_PW  &none          &ASYNET_PW
+&kp LC(LS(SEMICOLON))  &kp LC(SEMICOLON)  &kp LC(D)       &kp LA(LEFT)   &kp LA(RIGHT)            &trans  &kp LC(A)         &kp LC(C)  &kp LC(V)      &kp LC(LS(V))  &none
+&none                  &kp LS(LG(S))      &none           &kp LC(LS(T))  &kp LC(W)      &trans    &trans  &kp LC(Z)         &kp LC(Y)  &none          &none          &none
+&none                  &none              &none           &trans         &trans         &trans    &trans  &trans                                                     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
