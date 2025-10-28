@@ -122,10 +122,10 @@
 
         layer_1 {
             bindings = <
-&trans     &trans      &kp F2       &kp F5         &kp F5                                  &kp F7                 &kp F8          &kp F12          &kp FSLH      &kp BSLH
-&kp POUND  &kp DOLLAR  &kp PERCENT  &kp AMPERSAND  &kp LEFT_PARENTHESIS            &trans  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp SEMICOLON    &kp COLON     &trans
-&trans     &trans      &trans       &trans         &trans                &trans    &trans  &kp COMMA              &kp DOT         &kp EXCLAMATION  &kp QUESTION  &kp PIPE
-&trans     &trans      &trans       &trans         &trans                &trans    &trans  &trans                                                                &trans
+&trans         &trans            &kp F2             &kp F5         &kp F5                                  &kp F7                 &kp F8          &kp F12          &kp FSLH      &kp BSLH
+&kp POUND      &kp DOLLAR        &kp PERCENT        &kp AMPERSAND  &kp LEFT_PARENTHESIS            &trans  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp SEMICOLON    &kp COLON     &kp TILDE
+&kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &trans         &trans                &trans    &trans  &kp COMMA              &kp DOT         &kp EXCLAMATION  &kp QUESTION  &kp PIPE
+&trans         &trans            &trans             &trans         &trans                &trans    &trans  &trans                                                                &trans
             >;
 
             sensor-bindings = <&scroll_right_left>;
@@ -183,7 +183,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                             &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PLUS MINUS>;
         };
     };
 };
