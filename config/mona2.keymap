@@ -46,21 +46,21 @@
         ASYNET_PW: ASYNET_PW {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp N5 &kp R &kp Y &kp N6 &kp C &kp H &kp U &kp LS(U) &kp RET>;
+            bindings = <&none &kp N5 &kp R &kp Y &kp N6 &kp C &kp H &kp U &kp LS(U)>;
             label = "ASYNET_PW";
         };
 
         OnePassWD_PW: Mac_PW {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp K &kp Y &kp O &kp N &kp K &kp N0 &kp N1 &kp O &kp LS(V) &kp E &kp RET>;
+            bindings = <&none &kp K &kp Y &kp O &kp N &kp K &kp N0 &kp N1 &kp O &kp LS(V) &kp E>;
             label = "MAC_PW";
         };
 
         MagicConnect_PW: MagicConnect_PW {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp N8 &kp N3 &kp T &kp LS(T) &kp C &kp F &kp LS(Q) &kp LS(X) &kp LS(M) &kp LS(R) &kp RET>;
+            bindings = <&none &kp N8 &kp N3 &kp T &kp LS(T) &kp C &kp F &kp LS(Q) &kp LS(X) &kp LS(M) &kp LS(R)>;
             label = "MAGICCONNECT_PW";
         };
     };
@@ -114,7 +114,7 @@
 &kp Q      &kp W         &kp E         &kp R                      &kp T                                                      &kp Y        &kp U  &kp I        &kp O     &kp P
 &kp A      &kp S         &kp D         &kp F                      &kp G                                       &none          &kp H        &kp J  &kp K        &kp L     &kp MINUS
 &kp Z      &kp X         &kp C         &kp V                      &kp B        &none                          &kp DELETE     &kp N        &kp M  &kp AT_SIGN  &mkp MB1  &mkp MB2
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 1 SPACE  &lt_to_layer_0 3 LANGUAGE_1    &kp BACKSPACE  &lt 2 ENTER                                &lt 6 ESCAPE
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 1 SPACE  &lt_to_layer_0 3 LANGUAGE_1    &kp BACKSPACE  &lt 2 ENTER                                &lt 6 PRINTSCREEN
             >;
 
             sensor-bindings = <&scroll_up_down>;
